@@ -154,17 +154,17 @@ export const products = [
     accent: '#1E9AA1',
     accentSoft: '#E8FAFB',
     accentDeep: '#10363A',
-    heroImage: '/assets/redesign/scalp-relief-main.png',
+    heroImage: '/assets/redesign/Scrub and skin relief.mp4',
     gallery: [
       '/assets/redesign/scalp-relief-main.png',
-      '/assets/IMG_9301 Scalp & Skin Relief.png',
-      '/assets/IMG_9298 Scalp & Skin Relief.png',
+      // '/assets/IMG_9301 Scalp & Skin Relief.png',
+      '/assets/IMG_9298 Scalp & Skin Relief.png'
     ],
      extraImages: [
       '/assets/Dudleys Scalp & Skin Relief NEW.png',
     ],
     detailImage: '/assets/Dudleys Scalp & Skin Relief.png',
-    video: '/assets/redesign/Scrub and skin relief.mp4',
+    // video: '/assets/redesign/Scrub and skin relief.mp4',
     badge: 'Cooling care',
     notes: ['Soothing feel', 'Targeted comfort', 'Fresh finish'],
     highlights: [
