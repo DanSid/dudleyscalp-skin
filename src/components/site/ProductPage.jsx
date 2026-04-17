@@ -344,28 +344,7 @@ export default function ProductPage({ product }) {
   </section>
 )}
 
-   <section id="routine" className="mx-auto max-w-7xl px-6 py-12 sm:px-8 lg:px-10">
-        <Reveal direction="up">
-          <div className="dudley-card p-8 lg:p-10">
-            <p className="section-label">Routine</p>
-            <h2 className="mt-4 font-display text-5xl text-[#f2dfdf]">A simple ritual flow of beauty.</h2>
-            <div className="mt-10 grid gap-5 lg:grid-cols-3">
-              {product.routine.map((step, index) => (
-                <Reveal key={step} direction={index % 3 === 0 ? 'left' : index % 3 === 1 ? 'up' : 'right'} delay={index * 0.08}>
-                  <div className="dudley-card dudley-card-hover p-6">
-                    <div className="text-sm font-semibold uppercase tracking-[0.3em] text-[#efc868]">{`0${index + 1}`}</div>
-                    <h3 className="mt-4 font-display text-3xl text-[#f4eaea]">{step}</h3>
-                    <p className="mt-4 text-sm leading-6 text-white/[0.62]">
-                      Presented in a cleaner step layout so the visitor can understand the routine at a
-                      glance without losing the premium visual rhythm.
-                    </p>
-                  </div>
-                </Reveal>
-              ))}
-            </div>
-          </div>
-        </Reveal>
-      </section>
+
 
       {/* Render modal if open */}
       {modalOpen && (
