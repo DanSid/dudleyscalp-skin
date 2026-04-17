@@ -7,6 +7,32 @@
 @layer base {
   :root {
     color-scheme: dark;
+    --theme-body-start: #f6ebd3;
+    --theme-body-mid: #edd6ae;
+    --theme-body-end: #ccb183;
+    --theme-panel-start: rgba(180, 145, 92, 0.88);
+    --theme-panel-end: rgba(138, 106, 58, 0.94);
+    --theme-panel-soft: rgba(130, 101, 58, 0.28);
+    --theme-hover-border: rgba(255, 244, 224, 0.34);
+    --theme-hover-ring: rgba(255, 244, 224, 0.12);
+    --theme-footer-start: #f3e6ca;
+    --theme-footer-mid: #d7bb8e;
+    --theme-footer-end: #a88756;
+    --theme-navbar-start: #6f5131;
+    --theme-navbar-end: #4b331b;
+    --theme-hero-glow: rgba(255, 247, 231, 0.72);
+    --theme-hero-top: rgba(240, 224, 191, 0.94);
+    --theme-hero-bottom: rgba(237, 214, 174, 0.98);
+    --theme-hero-accent-a: rgba(255, 245, 223, 0.44);
+    --theme-hero-accent-b: rgba(237, 214, 174, 0.28);
+    --theme-top-card: linear-gradient(180deg, rgba(219, 196, 154, 0.76), rgba(159, 127, 79, 0.88));
+    --theme-modal-start: #8b6e46;
+    --theme-modal-end: #564126;
+    --theme-modal-chip-border: rgba(255, 244, 219, 0.26);
+    --theme-modal-chip-bg: rgba(255, 244, 219, 0.12);
+    --theme-modal-chip-text: #fff7e4;
+    --theme-modal-glow-a: rgba(255, 244, 219, 0.32);
+    --theme-modal-glow-b: rgba(221, 192, 139, 0.22);
   }
 
   html {
@@ -16,10 +42,10 @@
   }
 
   body {
-    @apply m-0 bg-[#82a0c9] font-body text-white;
+    @apply m-0 font-body text-white;
     background-image:
-      radial-gradient(circle at top, rgba(226, 238, 255, 0.76), transparent 28%),
-      linear-gradient(180deg, #b6cae4 0%, #82a0c9 46%, #6f90bd 100%);
+      radial-gradient(circle at top, var(--theme-hero-glow), transparent 28%),
+      linear-gradient(180deg, var(--theme-body-start) 0%, var(--theme-body-mid) 46%, var(--theme-body-end) 100%);
     background-attachment: fixed;
   }
 
@@ -34,7 +60,8 @@
 
 @layer components {
   .luxury-shell {
-    @apply min-h-screen bg-[#82a0c9] text-white;
+    @apply min-h-screen text-white;
+    background: linear-gradient(180deg, var(--theme-body-start) 0%, var(--theme-body-mid) 46%, var(--theme-body-end) 100%);
   }
 
   .font-display {
@@ -42,12 +69,12 @@
   }
 
   .hero-pill {
-    @apply inline-flex items-center gap-3 rounded-full border border-[#3a2427] bg-[#171013]/85 px-6 py-3 text-[11px] font-semibold uppercase tracking-[0.34em] text-[#d59ca1];
+    @apply inline-flex items-center gap-3 rounded-full border border-[#62462a] bg-[#3b2918]/90 px-6 py-3 text-[11px] font-semibold uppercase tracking-[0.34em] text-[#f3e7cd];
     box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.02);
   }
 
   .section-label {
-    @apply text-[11px] font-semibold uppercase tracking-[0.34em] text-[#d59ca1];
+    @apply text-[11px] font-semibold uppercase tracking-[0.34em] text-[#4c3217];
   }
 
   .eyebrow-dark {
@@ -55,7 +82,7 @@
   }
 
   .eyebrow-light {
-    @apply inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.32em] text-[#d59ca1];
+    @apply inline-flex items-center gap-2 rounded-full border border-[#7d6541]/20 bg-[#fff8ea]/55 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.32em] text-[#4c3217];
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
   }
 
@@ -71,19 +98,23 @@
   }
 
   .secondary-pill-dark {
-    @apply inline-flex items-center justify-center gap-3 border border-white/[0.14] px-7 py-4 text-sm font-semibold uppercase tracking-[0.24em] text-white/[0.82] transition duration-300;
-    background: rgba(255, 255, 255, 0.02);
+    @apply inline-flex items-center justify-center gap-3 border px-7 py-4 text-sm font-semibold uppercase tracking-[0.24em] transition duration-300;
+    border-color: rgba(92, 63, 28, 0.2);
+    color: #3a2815;
+    background: rgba(255, 250, 241, 0.28);
     backdrop-filter: blur(14px);
   }
 
   .secondary-pill-dark:hover {
-    @apply bg-white/5 text-white;
+    background: rgba(255, 250, 241, 0.44);
+    color: #25180b;
     transform: translateY(-2px);
   }
 
   .nav-pill,
   .nav-link-dudley {
-    @apply text-sm font-medium uppercase tracking-[0.22em] text-white/[0.58] transition duration-300 hover:text-white;
+    @apply text-sm font-medium uppercase tracking-[0.22em] transition duration-300;
+    color: rgba(255, 245, 231, 0.74);
   }
 
   .nav-product-strip {
@@ -96,7 +127,10 @@
   }
 
   .nav-product-chip {
-    @apply inline-flex items-center rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-white/[0.72] transition duration-300 hover:border-[#d59ca1]/40 hover:bg-white/[0.08] hover:text-white;
+    @apply inline-flex items-center rounded-full border px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] transition duration-300;
+    border-color: rgba(255, 245, 231, 0.14);
+    background: rgba(255, 248, 236, 0.08);
+    color: rgba(255, 245, 231, 0.78);
   }
 
   .hero-floating-card {
@@ -115,9 +149,9 @@
   .editorial-panel,
   .dudley-card {
     @apply rounded-[2rem] border border-white/10 backdrop-blur-xl;
-    background: linear-gradient(180deg, rgba(31, 84, 169, 0.86), rgba(20, 59, 123, 0.9));
+    background: linear-gradient(180deg, var(--theme-panel-start), var(--theme-panel-end));
     box-shadow:
-      0 18px 60px rgba(10, 29, 69, 0.28),
+      0 18px 60px rgba(82, 58, 22, 0.22),
       inset 0 1px 0 rgba(255, 255, 255, 0.08);
   }
 
@@ -135,15 +169,16 @@
 
   .dudley-card-hover:hover {
     transform: translateY(-8px);
-    border-color: rgba(225, 237, 255, 0.28);
+    border-color: var(--theme-hover-border);
     box-shadow:
-      0 26px 80px rgba(10, 29, 69, 0.36),
-      0 0 0 1px rgba(225, 237, 255, 0.08),
+      0 26px 80px rgba(82, 58, 22, 0.28),
+      0 0 0 1px var(--theme-hover-ring),
       inset 0 1px 0 rgba(255, 255, 255, 0.09);
   }
 
   .dudley-media-panel {
-    @apply overflow-hidden rounded-[1.6rem] border border-white/10 bg-[#120d10];
+    @apply overflow-hidden rounded-[1.6rem] border border-white/10;
+    background: linear-gradient(180deg, rgba(239, 222, 189, 0.42), var(--theme-panel-soft));
   }
 
   .footer-link {
