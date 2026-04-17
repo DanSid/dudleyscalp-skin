@@ -144,7 +144,7 @@ export const products = [
   {
     slug: 'scalp-and-skin',
     route: '/scalp-and-skin',
-    shopLink: 'https://shop.dudleyq.com/products/peppermint-soothe-shampoo-8oz?_pos=1&_sid=90d2e19d3&_ss=r',
+    shopLink: 'https://shop.dudleyq.com/products/scalp-skin-relief-8-oz',
     name: 'Scalp & Skin Relief',
     eyebrow: 'Cooling comfort ritual',
     shortName: 'Scalp & Skin Relief',
